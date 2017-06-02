@@ -2,9 +2,9 @@ var work = {
   "jobs":[
   {"employer": "SibSU",
   "title": "Developer",
-  "city": "Krasnoyarsk", 
+  "location": "Krasnoyarsk", 
   "dates": "12.2015 - Now",
-  "decription": ""
+  "decription": "Разработка модулей автоматизированной системы управления предприятием (вузом)"
   }
   ]
 };
@@ -82,6 +82,13 @@ for(job in work.jobs){
   $("#workExperience").append(HTMLworkStart);
   var formattedWorkEmployer = HTMLworkEmployer.replace('%data%',work.jobs[job].employer);
   var formattedWorkTitle = HTMLworkTitle.replace('%data%',work.jobs[job].title);
+  var formattedWorkDates = HTMLworkDates.replace('%data%',work.jobs[job].dates);
+  var formattedWorkLocation = HTMLworkLocation.replace('%data%',work.jobs[job].location);
+  var formattedWorkDescription = HTMLworkDescription.replace('%data%',work.jobs[job].descripton);
   var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
+  
   $(".work-entry:last").append(formattedEmployerTitle);
+  $(".work-entry:last").append(formattedWorkDates);
+  $(".work-entry:last").append(formattedWorkLocation);
+  $(".work-entry:last").append(formattedWorkDescription);
 }
