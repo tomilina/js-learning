@@ -5,6 +5,12 @@ var work = {
   "location": "Krasnoyarsk", 
   "dates": "12.2015 - Now",
   "decription": "Разработка модулей автоматизированной системы управления предприятием (вузом)"
+  },
+  {"employer": "SibSU",
+  "title": "Developer",
+  "location": "Chicago", 
+  "dates": "12.2015 - Now",
+  "decription": "Разработка модулей автоматизированной системы управления предприятием (вузом)"
   }
   ]
 };
