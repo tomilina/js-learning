@@ -14,7 +14,13 @@ var projects = {
   {
     "title": "Developer",
     "dates": "12.2015 - Now",
-    "decription": "",
+    "decription": "dfgsdfgsdfgsdfgsdf erererrrrrrrrrrrfffffffffff fdfffe er",
+    "images": []
+  },
+  {
+    "title": "Internship",
+    "dates": "12.2017 - Now",
+    "decription": "sdfgsdfsdddddddddddddd sdfssssssssssssssssssss sssssssssssssss rtttttttt",
     "images": []
   }
   ]
@@ -78,7 +84,8 @@ if (bio.skills.length > 0){
     }    
 }
 
-for(job in work.jobs){
+function displayWork(){
+  for(job in work.jobs){
   $("#workExperience").append(HTMLworkStart);
   var formattedWorkEmployer = HTMLworkEmployer.replace('%data%',work.jobs[job].employer);
   var formattedWorkTitle = HTMLworkTitle.replace('%data%',work.jobs[job].title);
@@ -92,3 +99,39 @@ for(job in work.jobs){
   $(".work-entry:last").append(formattedWorkLocation);
   $(".work-entry:last").append(formattedWorkDescription);
 }
+}
+
+displayWork();
+function inName(name){
+  var new_name = name.split(" ");
+  return new_name[0].slice(0,1).toUpperCase()+new_name[0].slice(1).toLowerCase()+" "+new_name[1].toUpperCase();
+}
+
+$("#main").append(internationalizeButton);
+
+
+//encapsulate display with projects object
+projects.display = function(){
+  for(project in projects.projects){
+    $("#projects").append(HTMLprojectStart);
+    var formatteProjectTitle = HTMLprojectTitle.replace('%data%',projects.projects[project].title);
+    var formatteProjectDates = HTMLprojectDates.replace('%data%',projects.projects[project].dates);
+    var formatteProjectDescription = HTMLprojectDescription.replace('%data%',projects.projects[project].decription);
+    var formatteProjectImage = HTMLprojectImage.replace('%data%',projects.projects[project].images[0]);
+    
+     $(".project-entry:last").append(formatteProjectTitle);
+     $(".project-entry:last").append(formatteProjectDates);
+     $(".project-entry:last").append(formatteProjectDescription);
+     $(".project-entry:last").append(formatteProjectImage);
+  }
+}
+
+projects.display();
+
+$("#mapDiv").append(googleMap);
+
+//$(document).click(function(loc) {
+//  console.log(loc.pageX);
+//  console.log(loc.pageY);
+//});
+
